@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>My Valentine 💗</title>
+
+  <!-- Handwritten font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="clickSound">
+    <source src="click.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Mute button -->
+  <button id="muteBtn" onclick="toggleMusic()">🔊</button>
+
+  <!-- Question -->
+  <div id="question">
+    <h1>Will you be my Valentine? 💕</h1>
+    <button onclick="playClick(); sayYes()">Yes 💗</button>
+    <button onclick="playClick(); sayNo()">No 😭</button>
+  </div>
+
+  <!-- Gift buttons -->
+  <div id="gifts" class="hidden">
+    <h2>I made these JUST for YOU 💞</h2>
+
+    <button onclick="playClick(); openGift(this, 'letter')">💌 Letter</button>
+    <button onclick="playClick(); openGift(this, 'flowers')">🌸 Flowers</button>
+    <button onclick="playClick(); openGift(this, 'photos')">📸 Memories</button>
+    <button onclick="playClick(); openGift(this, 'coupons')">🎟 Love Coupons</button>
+    <button onclick="playClick(); openGift(this, 'reasons')">💖 Why I Love You</button>
+    <button onclick="playClick(); openGift(this, 'videos')">🎥 Little Edits</button>
+  </div>
+
+<!-- Letter -->
+<div id="letter" class="section hidden">
+  <div class="page" onclick="this.classList.toggle('flipped')">
+    
+    <div class="page-inner">
+      
+      <div class="page-front">
+        <p>Click to read my letter 💌</p>
+      </div>
+
+      <div class="page-back">
+        <p>
+Why can’t we just get married already?
+I just want us to live together so I can fall asleep cuddling you.. and we can do all this fun stuff together..
+I js want us to move in together and live happily together.
+I want us to have a love like in the Disney movies.
+I want us to have a happy ending
+I just want us to be happy together forever..
+Is that so much to ask for?
+
+Honestly before this whole situation with us not being able to see eachother outta school for a WHILE, I felt my love for you drifting away.. I felt like I wasn’t able to love you the way I did before and that made me so mad… because I truly wanted to keep loving you but it felt so hard because I didn’t see worth in it anymore..
+And when I got told that we weren’t gonna be able hang outside of school anymore— at first I felt horrible. Like I was bawling my eyes out and I felt like I should js breakup tbh.. because I didn’t feel like it was worth it anymore..
+But a small part in me was telling me that I should stay.
+And that small bit was enough for me to decide that it was gonna be worth it.
+Idk who put it in me to stay even when I already felt like I wasn’t enough as I was having a lot of doubts..
+But I am GLAD I decided to stay🥹💗 
+This distance has honestly been a blessing. I didn’t notice it until today (2.1.26) but I’ve loved you more, and more, and even more every day. My love for you has reignited when I thought it never could- 🥹
+Sure, even though we still have our arguments here and there
+At the end of the day, when we stop arguing.. I always feel bad
+Because I know I hurt the only person that I truly love.
+I hope that I can keep loving you everyday my love, and if we ever do argue..
+Just know I didn’t mean it.. oki? 🥲 I love you so so much 💗🫶🏼
+Oh and I forgot one thing…
+Happy Valentines Day my gorgeous little girl <3 💗💞
+</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button onclick="showAllButtons()">⬅ Back</button>
+</div>
+
+  <!-- FLOWERS -->
+  <div id="flowers" class="section hidden">
+    <h2>Flowers for You 🌸</h2>
+
+    <div class="flower" onclick="playClick(); reveal(this, 'Your laugh is amazing 💗')">🌷</div>
+    <div class="flower" onclick="playClick(); reveal(this, 'I love how kind you are :3')">🌹</div>
+    <div class="flower" onclick="playClick(); reveal(this, 'You make everything better 💕')">🌼</div>
+<div class="flower" onclick="playClick(); reveal(this, 'I love the fact that you love me 💞')">🌻</div>
+
+    <br><br>
+    <button onclick="showAllButtons()">⬅ Back</button>
+  </div>
+
+  <!-- PHOTOS -->
+  <div id="photos" class="section hidden">
+    <h2>Our Memories 📸</h2>
+    <img src="photo1.jpeg">
+    <img src="photo2.jpeg">
+    <img src="photo3.jpeg">
+    <img src="photo4.jpeg">
+    <img src="photo5.jpeg">
+    <img src="photo6.jpeg">
+    <img src="photo7.jpeg">
+    <img src="photo8.jpeg">
+    <br><br>
+    <button onclick="showAllButtons()">⬅ Back</button>
+  </div>
+
+  <!-- COUPONS -->
+  <div id="coupons" class="section hidden">
+  <h2>Love Coupons 🎟</h2>
+  <button class="back-btn" onclick="showAllButtons()">⬅ Back</button>
+
+  <div class="coupon-container">
+    <div class="coupon" onclick="flipCoupon(this)">
+      <div class="coupon-inner">
+        <div class="front">🎟 Love Coupon</div>
+        <div class="back">Free hugs/kisses anytime 💗</div>
+      </div>
+    </div>
+
+    <div class="coupon" onclick="flipCoupon(this)">
+      <div class="coupon-inner">
+        <div class="front">🎟 Love Coupon</div>
+        <div class="back">Free FOOD >:3 💗</div>
+      </div>
+    </div>
+
+<div class="coupon" onclick="flipCoupon(this)">
+      <div class="coupon-inner">
+        <div class="front">🎟 Love Coupon</div>
+        <div class="back">Free pictures of me :L</div>
+      </div>
+    </div>
+
+    <!-- add more coupons here -->
+  </div>
+</div>
+
+  <!-- WHY I LOVE YOU -->
+  <div id="reasons" class="section hidden">
+    <h2>Why I Love You <3</h2>
+    <p id="reasonText">Click the button :p</p>
+    <button onclick="playClick(); nextReason()">Tell me another</button>
+    <br><br>
+    <button onclick="showAllButtons()">⬅ Back</button>
+  </div>
+
+  <!-- VIDEOS -->
+  <div id="videos" class="section hidden">
+    <h2>Little Edits I Made For You 🎥💗</h2>
+    <video controls width="300">
+      <source src="edit1.mp4" type="video/mp4">
+    </video>
+    <br><br>
+    <button onclick="showAllButtons()">⬅ Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
